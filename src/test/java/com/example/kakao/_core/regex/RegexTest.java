@@ -42,4 +42,13 @@ public class RegexTest {
 
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void 정수만된다_test(){
+        String value = "100";
+        boolean result = Pattern.matches("^[1-9]\\d*$", value);
+        System.out.println("테스트 : " + result);
+
+        Assertions.assertTrue(result);
+    }
 }
