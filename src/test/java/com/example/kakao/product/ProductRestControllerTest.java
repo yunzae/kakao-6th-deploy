@@ -66,12 +66,12 @@ class ProductRestControllerTest extends DummyEntity {
         System.out.println("테스트 : "+responseBody);
 
         // then
-        result.andExpect(MockMvcResultMatchers.jsonPath("$.success").value("true"));
-        result.andExpect(MockMvcResultMatchers.jsonPath("$.response[0].productName").value("기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전"));
-        result.andExpect(MockMvcResultMatchers.jsonPath("$.response[0].image").value("/images/1.jpg"));
-        result.andExpect(MockMvcResultMatchers.jsonPath("$.response[0].price").value(1000));
-        result.andExpect(MockMvcResultMatchers.jsonPath("$.success").value("true"));
-        result.andExpect(MockMvcResultMatchers.jsonPath("$.response.size()").value(9));
+        result.andExpect(MockMvcResultMatchers.jsonPath("$.success").value("true"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.response[0].productName").value("기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.response[0].image").value("/images/1.jpg"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.response[0].price").value(1000))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.success").value("true"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.response.size()").value(9));
 
 
 
@@ -100,13 +100,13 @@ class ProductRestControllerTest extends DummyEntity {
         System.out.println("테스트 : "+responseBody);
 
         // then
-        result.andExpect(MockMvcResultMatchers.jsonPath("$.success").value("true"));
-        result.andExpect(MockMvcResultMatchers.jsonPath("$.response.productName").value("기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전"));
-        result.andExpect(MockMvcResultMatchers.jsonPath("$.response.image").value("/images/1.jpg"));
-        result.andExpect(MockMvcResultMatchers.jsonPath("$.response.price").value(1000));
-        result.andExpect(MockMvcResultMatchers.jsonPath("$.response.starCount").value(5));
-        result.andExpect(MockMvcResultMatchers.jsonPath("$.response.options[0].optionName").value("01. 슬라이딩 지퍼백 크리스마스에디션 4종"));
-        result.andExpect(MockMvcResultMatchers.jsonPath("$.response.options.size()").value(5));
+        result.andExpect(MockMvcResultMatchers.jsonPath("$.success").value("true"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.response.productName").value("기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.response.image").value("/images/1.jpg"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.response.price").value(1000))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.response.starCount").value(5))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.response.options[0].optionName").value("01. 슬라이딩 지퍼백 크리스마스에디션 4종"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.response.options.size()").value(5));
 
     }
 
