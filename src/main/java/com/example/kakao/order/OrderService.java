@@ -48,7 +48,7 @@ public class OrderService {
         if (items.isEmpty()) {
             throw new Exception400("해당 주문번호는 없는 번호입니다.");
         }
-        if (items.get(0).getOrder().getId() != userId) {
+        if (items.get(0).getOrder().getUser().getId() != userId) {
             throw new Exception400("요청한 유저의 주문이 아닙니다.");
         }
         return new OrderResponse.FindByIdDTO(items.get(0).getOrder(), items);
