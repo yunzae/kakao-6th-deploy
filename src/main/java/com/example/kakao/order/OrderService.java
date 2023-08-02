@@ -46,7 +46,7 @@ public class OrderService {
     public OrderResponse.FindByIdDTO findById(int orderId, int userId) {
         List<Item> items = itemJPARepository.mFindAllByOrderId(orderId);
         if (items.isEmpty()) {
-            throw new Exception400("주문목록이 없습니다.");
+            throw new Exception400("해당 주문번호는 없는 번호입니다.");
         }
         if (items.get(0).getOrder().getId() != userId) {
             throw new Exception400("요청한 유저의 주문이 아닙니다.");

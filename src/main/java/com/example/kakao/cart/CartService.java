@@ -79,6 +79,9 @@ public class CartService {
             }
             for (Cart cart : cartList) {
                 if (cart.getId() == updateDTO.getCartId()) {
+                    if (updateDTO.getQuantity()<1){
+                        throw new Exception400("옵션의 개수가 1보다 작을 수 없습니다.");
+                    }
                     cart.update(updateDTO.getQuantity(), cart.getOption().getPrice() * updateDTO.getQuantity());
                 }
 
